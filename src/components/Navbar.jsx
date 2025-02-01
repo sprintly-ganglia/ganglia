@@ -1,123 +1,76 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { Menu, X } from "lucide-react";
+import { Link, useLocation } from "react-router-dom";
+import { motion } from "framer-motion";
 
-const Navbar = () => {
+const tabs = [
+  { name: "Home", path: "/" },
+  { name: "About Us", path: "/about" },
+  { name: "Services", path: "/services" },
+  { name: "Blog", path: "/blog" },
+  { name: "Contact", path: "/contact" },
+];
+
+export default function NavBar() {
+  const location = useLocation();
+  const [isOpen, setIsOpen] = useState(false);
+  const [selected, setSelected] = useState("");
+
+  // Update selected tab based on the current route
+  useEffect(() => {
+    const currentTab = tabs.find((tab) => tab.path === location.pathname);
+    setSelected(currentTab ? currentTab.name : "");
+  }, [location.pathname]);
+
   return (
-    // <nav className="navbar navbar-expand-lg navbar-dark bg-dark" style={{ height: '80px' }}>
-    //   <div className="container-fluid">
-    //     <a className="navbar-brand" href="#" style={{ fontSize: '1.5rem' }}>
-    //       <img
-    //         src="src/assets/ganglia-logo.png"
-    //         alt="Logo"
-    //         width="40"
-    //         height="40"
-    //         className="d-inline-block align-text-top"
-    //       />
-    //       <span className="ms-2">Ganglia Technologies</span>
-    //     </a>
-    //     {/* Toggle button for smaller screens */}
-    //     <button
-    //       className="navbar-toggler"
-    //       type="button"
-    //       data-bs-toggle="collapse"
-    //       data-bs-target="#navbarNav"
-    //       aria-controls="navbarNav"
-    //       aria-expanded="false"
-    //       aria-label="Toggle navigation"
-    //     >
-    //       <span className="navbar-toggler-icon"></span>
-    //     </button>
-    //     <div className="collapse navbar-collapse" id="navbarNav">
-    //       <ul className="navbar-nav ms-auto">
-    //         <li className="nav-item">
-    //           <Link className="nav-link" to="/about" style={{ fontSize: '1.2rem' }}>
-    //             About
-    //           </Link>
-    //         </li>
-    //         <li className="nav-item">
-    //           <Link className="nav-link" to="/techvrse" style={{ fontSize: '1.2rem' }}>
-    //             Techvrse
-    //           </Link>
-    //         </li>
-    //       </ul>
-    //     </div>
-    //   </div>
-    // </nav>
-    <nav
-      className="navbar navbar-expand-lg navbar-dark bg-dark"
-      style={{ backgroundColor: "#ffede7" }}
-    >
-      <div className="container">
-        <Link className="nav-link" to="/" style={{ fontSize: "1.2rem" }}>
-          <a className="navbar-brand" href="#">
-            <img
-              src="src/assets/ganglia-logo.png"
-              alt="Logo"
-              width="40"
-              height="40"
-              className="d-inline-block align-text-top"
-            />
-          </a>
-        </Link>
+    <nav className="bg-gray-800 p-4 text-white fixed top-0 left-0 w-full shadow-md z-50">
+      <div className="container mx-auto flex justify-between items-center">
+        <div className="flex flex-row gap-2">
+          <img src="/assets/images/gangliaLogo.png" className="h-8 w-8" />
+          <h1 className="text-xl font-bold">Ganglia</h1>
+        </div>
 
-        <div className="collapse navbar-collapse" id="navbarExample01">
-          <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-            <li className="nav-item active">
-              <Link className="nav-link" to="/" style={{ fontSize: "1.2rem" }}>
-                <a className="nav-link px-3" href="">
-                  About
-                </a>
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link
-                className="nav-link"
-                to="/techvrse"
-                style={{ fontSize: "1.2rem" }}
-              >
-                <a className="nav-link px-3" href="#!">
-                  Techvrse
-                </a>
-              </Link>
-            </li>
-            {/* <li className="nav-item">
-              <a className="nav-link px-3" href="#!">
-                about us
-              </a>
-            </li> */}
-            {/* <li className="nav-item active">
-              <a className="nav-link px-3" href="#!">
-                collaboration
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link px-3" href="#!">
-                contact us
-              </a>
-            </li> */}
-          </ul>
+        {/* Desktop Navigation */}
+        <div className="hidden md:flex space-x-6 text-lg relative">
+          {tabs.map((tab) => (
+            <Link
+              key={tab.name}
+              to={tab.path}
+              onClick={() => setSelected(tab.name)}
+              className="relative text-white px-4 py-1 rounded-md"
+            >
+              <span className="relative z-10">{tab.name}</span>
+              {selected === tab.name && (
+                <motion.span
+                  layoutId="pill-tab"
+                  transition={{ type: "spring", duration: 1 }}
+                  className="absolute inset-0 z-0 bg-gradient-to-r from-violet-600 to-indigo-600 rounded-md"
+                ></motion.span>
+              )}
+            </Link>
+          ))}
+        </div>
 
-          <ul className="navbar-nav flex-row">
-            <li className="nav-item">
-              <a className="nav-link pe-3" href="#!">
-                <i className="fab fa-youtube"></i>
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link px-3" href="#!">
-                <i className="fab fa-facebook-f"></i>
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link ps-3" href="#!">
-                <i className="fab fa-instagram"></i>
-              </a>
-            </li>
-          </ul>
+        {/* Mobile Menu Button */}
+        <div className="md:hidden">
+          <button onClick={() => setIsOpen(!isOpen)}>
+            {isOpen ? <X size={28} /> : <Menu size={28} />}
+          </button>
         </div>
       </div>
+
+      {/* Mobile Menu */}
+      {isOpen && (
+        <div className="md:hidden flex flex-col items-center bg-gray-800 py-4 space-y-4 absolute top-full left-0 w-full">
+          {tabs.map((tab) => (
+            <p key={tab.name}>
+              <Link to={tab.path} onClick={() => setIsOpen(false)}>
+                {tab.name}
+              </Link>
+            </p>
+          ))}
+        </div>
+      )}
     </nav>
   );
-};
-
-export default Navbar;
+}
