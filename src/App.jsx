@@ -3,7 +3,7 @@ import "./App.css";
 // import { Route, Router } from 'lucide-react'
 
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import AboutUs from "./Components/AboutUs";
+import About from "./Components/About";
 import Blog from "./Components/Blog";
 import ContactUs from "./Components/ContactUs";
 import Footer from "./Components/Footer";
@@ -20,7 +20,7 @@ function App() {
         <div className="  w-full mt-10 ">
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/about" element={<AboutUs />} />
+            <Route path="/about" element={<About />} />
             <Route path="/services" element={<OurServices />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/contact" element={<ContactUs />} />

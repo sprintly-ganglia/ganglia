@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import Milestones from "./Milestones";
 import OurApproach from "./OurApproach";
 
-const AboutUs = () => {
+const About = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -45,4 +45,4 @@ const AboutUs = () => {
   );
 };
 
-export default AboutUs;
+export default About;
