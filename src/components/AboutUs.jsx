@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import Milestones from "./Milestones";
 import OurApproach from "./OurApproach";
 
-export const AboutUs = () => {
+const AboutUs = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
