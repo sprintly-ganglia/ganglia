@@ -1,7 +1,7 @@
-import { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
-import { Link, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
+import { Menu, X } from "lucide-react";
+import { useEffect, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 
 const tabs = [
   { name: "Home", path: "/" },
@@ -11,7 +11,7 @@ const tabs = [
   { name: "Contact", path: "/contact" },
 ];
 
-export default function NavBar() {
+const Navbar = () => {
   const location = useLocation();
   const [isOpen, setIsOpen] = useState(false);
   const [selected, setSelected] = useState("");
@@ -73,4 +73,6 @@ export default function NavBar() {
       )}
     </nav>
   );
-}
+};
+
+export default Navbar;
