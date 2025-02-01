@@ -14,7 +14,7 @@ const teamMembers = [
   },
   {
     name: "Namesh Malarout",
-    image: "/assets/images/placeholder.jpg",
+    image: "/assets/images/ceo.png",
     position: "CEO",
   },
   {
