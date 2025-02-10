@@ -1,8 +1,7 @@
-import { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
-import { Link, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
-import content from "../../content.json";
+import { Menu, X } from "lucide-react";
+import { useEffect, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 
 const tabs = [
   { name: "Home", path: "/" },
@@ -68,7 +67,10 @@ export default function NavBar() {
                       key={item.name}
                       to={item.path}
                       className="block px-4 py-2 hover:bg-gradient-to-r hover:from-violet-600 hover:to-indigo-600 "
-                      onClick={() =>{setSelected("About Us");setIsDropdownOpen(false)}}
+                      onClick={() => {
+                        setSelected("About Us");
+                        setIsDropdownOpen(false);
+                      }}
                     >
                       {item.name}
                     </Link>
@@ -97,7 +99,7 @@ export default function NavBar() {
                 onClick={() => setIsOpen(false)}
                 className="block py-2"
               >
-                {tab.name!=="About Us"?tab.name:""}
+                {tab.name !== "About Us" ? tab.name : ""}
               </Link>
 
               {/* Mobile Dropdown for About Us */}
