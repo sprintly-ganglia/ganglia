@@ -1,6 +1,5 @@
 import React, { useEffect, useRef } from 'react';
 import { motion, useInView } from "framer-motion";
-import OurProducts from './OurProducts';
 import content from '../../content.json'
 
 const OurServices = () => {

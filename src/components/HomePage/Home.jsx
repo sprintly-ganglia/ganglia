@@ -21,7 +21,7 @@ export const Home = () => {
       </div>
       <WhoAreWe />
 
-      <OurTeam />
+      <OurTeam context="home"/>
     </div>
   );
 };
@@ -107,12 +107,18 @@ const OverlayCopy = ({ tagline, heading, description }) => {
       ref={targetRef}
       className="absolute left-0 top-0 flex h-screen w-full flex-col items-start pl-4 justify-center text-white overflow-x-clip"
     >
-      <img src="/assets/images/GANGLIA_text.png" className="mb-10 sm:h-auto h-20" style={{ fontFamily: "'Montserrat', sans-serif"}}></img>
-      {/* <div>
-        <h1 className="text-7xl font-bold font-[Montserrat]" style={{ fontFamily: "'Montserrat', sans-serif"}}>{content.logo.titlePrimary}</h1>
+      {/* <img src="/assets/images/GANGLIA_text.png" className="mb-10 sm:h-auto h-20" style={{ fontFamily: "'Montserrat', sans-serif"}}></img> */}
+      <div>
+      <h1
+  className="text-6xl bg-gradient-to-b from-white via-white to-transparent bg-clip-text text-transparent"
+  style={{ fontFamily: "'Montserrat', sans-serif" }}
+>
+  {content.logo.titlePrimary}
+</h1>
+
         <h3 className="text-[27px] -mt-1 mb-6 pl-2 font-semibold">{content.logo.titleSecondary}</h3>
-      </div> */}
-      <p className="text-left text-2xl lg:text-5xl md:text-4xl mb-4">
+      </div>
+      <p className="text-left text-2xl lg:text-5xl  md:text-4xl mb-4">
         {tagline}
       </p>
       <p className="text-md lg:text-xl max-w-5/6">
@@ -120,7 +126,7 @@ const OverlayCopy = ({ tagline, heading, description }) => {
       </p>
       <Link
         to="/services"
-        className="w-1/2 md:w-64 lg:w-64  rounded mt-10 bg-white px-4 py-3 text-lg text-black transition-colors hover:scale-105  group flex items-center justify-center no-underline"
+        className="  rounded-md mt-10 bg-gradient-to-r from-violet-600 to-indigo-600  px-6 py-3 text-lg text-white transition-colors hover:scale-105  group flex items-center justify-center no-underline"
       >
         Our Services  
         <FiArrowUpRight className="inline transition-transform duration-300 group-hover:rotate-45" />

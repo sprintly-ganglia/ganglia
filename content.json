@@ -22,7 +22,7 @@
         "titlePrimary": "GANGLIA",
         "titleSecondary": "TECHNOLOGIES PVT. LTD."
     },
-
+    "teamHeader":"Meet Our Team",
     "ourTeamDescription": "At Ganglia Technologies, our strength lies in our people. Led by seasoned professionals in engineering, AI, and healthcare, our leadership team drives innovation and excellence. With a dedicated workforce of 50+ experts, we are committed to developing, refining, and delivering high-impact solutions that make a difference.",
 
     "ourTeam": [
@@ -68,6 +68,17 @@
             "position": "CMO",
             "linkedIn":"https://www.linkedin.com/in/anusha-pai-013b0213/"
         }
+    ],
+
+    "SubteamTitle":"Our Employees",
+
+    "teamImages":[
+        "/assets/images/whoarewe.jpeg",
+        "https://placehold.co/1000x700",
+        "https://placehold.co/700x200",
+        "https://placehold.co/100x100",
+        "https://placehold.co/200x100",
+        "https://placehold.co/300x100"
     ],
 
     "aboutUs": {

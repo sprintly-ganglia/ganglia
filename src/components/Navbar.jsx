@@ -1,3 +1,5 @@
+import { faCaretDown } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
@@ -36,16 +38,18 @@ export default function NavBar() {
 
         {/* Desktop Navigation */}
         <div className="hidden lg:flex text-lg relative">
+          
           {tabs.map((tab) => (
             <div key={tab.name} className="relative group">
               <Link
                 to={tab.path}
                 onClick={() => setSelected(tab.name)}
-                className="relative text-white px-4 py-1 rounded-md"
+                className="relative text-white px-4 py-2 rounded-md"
                 onMouseEnter={() => tab.hasDropdown && setIsDropdownOpen(true)}
                 onMouseLeave={() => setIsDropdownOpen(false)}
               >
                 <span className="relative z-10">{tab.name}</span>
+                {tab.hasDropdown && <FontAwesomeIcon icon={faCaretDown} className="relative z-10 pl-2"/>}
                 {selected === tab.name && (
                   <motion.span
                     layoutId="pill-tab"
@@ -53,12 +57,12 @@ export default function NavBar() {
                     className="absolute inset-0 z-0 bg-gradient-to-r from-violet-600 to-indigo-600 rounded-md"
                   ></motion.span>
                 )}
-              </Link>
+              </Link    >
 
               {/* Dropdown for About Us */}
               {tab.hasDropdown && isDropdownOpen && (
                 <div
-                  className="absolute left-0 w-44 mt-0.5 bg-gray-800 text-white shadow-lg rounded border border-gray-600"
+                  className="absolute left-0 w-44 mt-0.5 bg-gray-800 text-white shadow-lg rounded border border-gray-600 text-base"
                   onMouseEnter={() => setIsDropdownOpen(true)}
                   onMouseLeave={() => setIsDropdownOpen(false)}
                 >
