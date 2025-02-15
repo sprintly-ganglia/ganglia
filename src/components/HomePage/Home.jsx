@@ -5,13 +5,13 @@ import { Link } from "react-router-dom";
 import content from "../../../content.json";
 import OurTeam from "./OurTeam";
 import WhoAreWe from "./WhoAreWe";
-import myImage from "/assets/images/landingPage.jpeg";
+
 export const Home = () => {
   return (
     <div className="flex flex-col gap-2">
       <div className="bg-white">
         <TextParallaxContent
-          imgUrl={myImage}
+          imgUrl={content.home.landingPageBg}
           heading={content.home.companyName}
           tagline={content.home.heroTagline}
           description={content.home.description}
@@ -21,7 +21,7 @@ export const Home = () => {
       </div>
       <WhoAreWe />
 
-      <OurTeam context="home"/>
+      <OurTeam context="home" />
     </div>
   );
 };
@@ -50,7 +50,7 @@ const TextParallaxContent = ({
           description={description}
         />
       </div>
-      
+
       {children}
     </div>
   );
@@ -109,28 +109,38 @@ const OverlayCopy = ({ tagline, heading, description }) => {
     >
       {/* <img src="/assets/images/GANGLIA_text.png" className="mb-10 sm:h-auto h-20" style={{ fontFamily: "'Montserrat', sans-serif"}}></img> */}
       <div>
-      <h1
-  className="text-6xl bg-gradient-to-b from-white via-white to-transparent bg-clip-text text-transparent"
-  style={{ fontFamily: "'Montserrat', sans-serif" }}
->
-  {content.logo.titlePrimary}
-</h1>
+        <h1
+          className="text-4xl md:text-6xl bg-gradient-to-b from-white via-white to-transparent bg-clip-text text-transparent"
+          style={{ fontFamily: "'Montserrat', sans-serif" }}
+        >
+          GANGLIA TECHNOLOGIES
+        </h1>
 
-        <h3 className="text-[27px] -mt-1 mb-6 pl-2 font-semibold">{content.logo.titleSecondary}</h3>
+        {/* <h3 className="text-[27px] -mt-1  pl-2 font-semibold">{content.logo.titleSecondary}</h3> */}
       </div>
-      <p className="text-left text-2xl lg:text-5xl  md:text-4xl mb-4">
+      <p className="text-left text-2xl lg:text-5xl  md:text-4xl mb-4 mt-10">
         {tagline}
       </p>
       <p className="text-md lg:text-xl max-w-5/6">
         {content.home.description}
       </p>
-      <Link
-        to="/services"
-        className="  rounded-md mt-10 bg-gradient-to-r from-violet-600 to-indigo-600  px-6 py-3 text-lg text-white transition-colors hover:scale-105  group flex items-center justify-center no-underline"
-      >
-        Our Services  
-        <FiArrowUpRight className="inline transition-transform duration-300 group-hover:rotate-45" />
-      </Link>
+      <div className="flex">
+        <Link
+          to="/services"
+          className="  rounded-md mt-10 bg-gradient-to-r from-violet-600 to-indigo-600  px-6 py-3 text-lg text-white transition-colors hover:scale-105  group flex items-center justify-center no-underline"
+        >
+          Our Services
+          <FiArrowUpRight className="inline transition-transform duration-300 group-hover:rotate-45" />
+        </Link>
+        {/* <Link
+          to="/ourproducts"
+          className=" ml-6 rounded-md mt-10 bg-gradient-to-r from-violet-600 to-indigo-600  px-6 py-3 text-lg text-white transition-colors hover:scale-105  group flex items-center justify-center no-underline"
+        >
+          Our Products
+          <FiArrowUpRight className="inline transition-transform duration-300 group-hover:rotate-45" />
+        </Link> */}
+      </div>
+
     </motion.div>
   );
 };

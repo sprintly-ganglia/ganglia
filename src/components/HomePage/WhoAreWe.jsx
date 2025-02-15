@@ -10,7 +10,7 @@ const WhoAreWe = () => {
       <div className="flex flex-col md:flex-row">
       <div className="relative w-full sm:w-[100%]  h-fit mb-4">
           <img
-            src="/assets/images/whoarewe.jpeg"
+            src={content.home.whoAreWeBG}
             className=""
           />
           {/* Opacity Layer */}
@@ -23,7 +23,7 @@ const WhoAreWe = () => {
 
         {/* Right content */}
         <div className="relative text-left -mt-20 md:mt-10 mx-4 md:-ml-10 w-[90%] lg:w-full md:w-full h-fit flex justify-center">
-  <div className="p-6 md:p-16 lg:p-20 text-base md:text-xl lg:text-xl bg-gray-100 rounded-md shadow-xl  ">
+  <div className="p-6 md:p-16 lg:p-20 text-base md:text-xl lg:text-xl bg-gray-100 rounded-md shadow-xl">
     <p>
       {content.home.whoAreWe}
     </p>

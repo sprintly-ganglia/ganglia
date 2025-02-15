@@ -1,5 +1,6 @@
 {
     "home": {
+        "landingPageBg":"/assets/images/landingPage.jpeg",
         "companyName": "Ganglia Technologies",
         "heroTagline": "Unsatisfied with existing technology!",
         "description": "Ganglia Technologies private limited is revolutionizing healthcare and AI-driven solutions, making cutting-edge innovation accessible and affordable.",
@@ -9,6 +10,7 @@
             "Our Services",
             "Contact Us"
         ],
+        "whoAreWeBG":"/assets/images/whoarewe.jpeg",
         "whoAreWe": "At Ganglia Technologies, we are a team focused on creating innovative and affordable solutions in healthcare and technology. We combine AI and engineering to develop products that improve lives and make operations more efficient. Our goal is to make advanced technology accessible and impactful for everyone.",
         "joinUs": "Join us as we continue our journey to make advanced solutions accessible and affordable for everyone."
     },
@@ -76,9 +78,16 @@
         "/assets/images/whoarewe.jpeg",
         "https://placehold.co/1000x700",
         "https://placehold.co/700x200",
-        "https://placehold.co/100x100",
         "https://placehold.co/200x100",
         "https://placehold.co/300x100"
+    ],
+
+    "teamDescriptions":[
+        "Our team thrives on creativity and collaboration, bringing diverse skills together to drive innovation. Each member contributes unique expertise, from problem-solving to design thinking, ensuring that we stay ahead of industry trends. We believe in open communication and continuous learning, creating an environment where ideas flourish and challenges turn into opportunities.",
+        "We are a dynamic group of professionals committed to delivering high-quality results. Our team embraces change and adapts quickly to new challenges, ensuring that we consistently exceed expectations. With a strong focus on efficiency and teamwork, we leverage each other's strengths to achieve our goals.",
+        "Our team is dedicated to understanding and meeting our clients' needs with excellence. Passionate about our work, we go the extra mile to provide solutions that make a real impact. With a customer-first mindset, we value integrity, responsiveness, and continuous improvement in everything we do.",
+        "We are a team of forward-thinking professionals who use data and technology to drive smart decision-making. By leveraging the latest tools and analytics, we create innovative solutions that optimize performance. Our data-driven approach ensures that we stay competitive, efficient, and ready for the future.",
+        "We foster a culture of support, mentorship, and professional development. Each team member is encouraged to grow, learn, and take on new challenges. Through collaboration and mutual respect, we create a positive work environment where everyone has the opportunity to succeed."
     ],
 
     "aboutUs": {
